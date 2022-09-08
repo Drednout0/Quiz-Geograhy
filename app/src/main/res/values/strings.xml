@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GeoQ</string>
+    <string name="question_australi">Канбара это столица Австралии?</string>
+    <string name="true_button">Правда</string>
+    <string name="false_button">Ложь</string>
+    <string name="correct_toast">Верно</string>
+    <string name="incorrect_toast">Неверно</string>
+    <string name="next_button">Дальше</string>
+    <string name="quest_text">Что у тебя было по географии в школе? </string>
+    <string name="question_oceans">Тихий океан больше, чем Атлантический океан. </string>
+    <string name="question_mideast">Суэцкий канал соединяет Красное море и Индийский океан. </string>
+    <string name="question_africa">Исток реки Нил находится в Египте.</string>
+    <string name="question_americas">Река Амазонка - самая длинная река в Северной и Южной Америке. </string>
+    <string name="question_asia">Озеро Байкал - старейшее и самое глубокое пресноводное озеро в мире. </string>
+    <string name="pred_button">Назад</string>
+    <string name="show_answer_button">Показать ответы</string>
+    <string name="warning_text">Читерим, да? :)</string>
+    <string name="cheat_button">Чит кнопка</string>
+    <string name="judgment_toast">Вы были забанены за читы:)))</string>
+
+
+</resources>
