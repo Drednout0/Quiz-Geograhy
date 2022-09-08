@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-
 private  const val EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geomain.answer_is_true"
 const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geomain.answer_shown"
+
 
 class CheatActivity : AppCompatActivity() {
 
@@ -41,7 +41,10 @@ class CheatActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(packageContext: Context, answerIsTrue:Boolean ): Intent {
+
+
+        fun newIntent(packageContext: Context,
+                      answerIsTrue:Boolean ): Intent {
             return Intent (packageContext, CheatActivity::class.java).apply {
                 putExtra(EXTRA_ANSWER_IS_TRUE, answerIsTrue)
             }

@@ -12,11 +12,12 @@ import android.widget.TextView
 import android.widget.Toast
 
 import androidx.lifecycle.ViewModelProviders
-import java.io.CharArrayWriter
+
 
 private const val TAG = "MainActivity"
-private const val  KEY_INDEX = "Index"
-private const val  REQUEST_CODE_CHEAT = 0
+private const val KEY_INDEX = "Index"
+private const val REQUEST_CODE_CHEAT = 0
+
 class MainActivity : AppCompatActivity() {
 
 
@@ -32,11 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var cheatButton: Button
 
-    private var pravOtvet = 0;
-    val mess = "Правильных ответов"
 
-    private var nepravOtvet = 0;
-    val messTwo = "Неправильных ответов"
 
     private val quizViewModel: QuizViewModel by lazy {
         ViewModelProviders.of(this).get(QuizViewModel::class.java)
@@ -44,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion() {
+        questionTextView = findViewById(R.id.quest_text_view)
         val questionTextResId = quizViewModel.currentQuestionText
         questionTextView.setText(questionTextResId)
     }
@@ -78,18 +76,20 @@ class MainActivity : AppCompatActivity() {
             falseButton.isClickable = false
             trueButton.isClickable = false
         }
+
         falseButton.setOnClickListener {
             checkAnswer(false)
-            questionTextView = findViewById(R.id.quest_text_view)
+
             falseButton.isClickable = false
             trueButton.isClickable = false
+        }
 
             nextButton.setOnClickListener {
                 quizViewModel.moveToNext()
                 updateQuestion()
                 falseButton.isClickable = true
-
                 trueButton.isClickable = true
+            }
 
                 predButton.setOnClickListener {
                     quizViewModel.moveToNext()
@@ -105,8 +105,8 @@ class MainActivity : AppCompatActivity() {
                 updateQuestion()
 
             }
-        }
-    }
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -114,8 +114,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         if (requestCode == REQUEST_CODE_CHEAT) {
-            quizViewModel.isCheater= data?.getBooleanExtra(EXTRA_ANSWER_SHOWN, false) ?:
-            false
+            quizViewModel.isCheater = data?.getBooleanExtra(EXTRA_ANSWER_SHOWN, false) ?: false
         }
     }
 }
